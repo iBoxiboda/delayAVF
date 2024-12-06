@@ -5,7 +5,7 @@ TOOLCHAIN_PREFIX ?= riscv64-unknown-elf-
 %.bin: %.elf
 	$(TOOLCHAIN_PREFIX)objcopy -O binary $< $@
 %.hex: %.bin
-	python3 ../../minimal_firmware/makehex.py $< > $@
+	python3 ../minimal_firmware/makehex.py $< > $@
 
 clean:
 	rm -f *.elf *.bin *.hex
